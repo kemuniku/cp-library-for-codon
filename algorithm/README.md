@@ -1,6 +1,8 @@
-# DSU (Disjoint Set Union)
+# Algorithm  
 
-DSU（Disjoint Set Union）は、要素集合をいくつかのグループ（集合）に分割し、それらの集合の管理を効率的に行うためのデータ構造です。  
-Union-Find とも呼ばれます。  
+アルゴリズム・データ構造のライブラリです。  
 
-(機能確認中です)  
+## データ構造
+- [DSU(Disjoint Set Union / UnionFind)](./DSU/)  
+
+(現在編集中)
