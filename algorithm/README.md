@@ -3,6 +3,6 @@
 アルゴリズム・データ構造のライブラリです。  
 
 ## データ構造
-- [DSU(Disjoint Set Union / UnionFind)](./DSU/)  
+- [DSU(Disjoint Set Union / UnionFind)](./dsu/)   
 
 (現在編集中)
