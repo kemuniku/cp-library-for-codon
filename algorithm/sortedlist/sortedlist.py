@@ -7,7 +7,7 @@ class SortedList[T]:
     期待時間計算量: O(logN) / クエリ 最悪時間計算量: O(N) / クエリ
     期待空間計算量: O(N)  最悪空間計算量: O(NlogN)
     '''
-    logN_GROWTH_FACTOR: int = 2  #動作不良 __init__で再代入する
+    logN_GROWTH_FACTOR = 2
     
     _len: int
     _logN: int
@@ -40,7 +40,7 @@ class SortedList[T]:
         #   2. val[last_i] より真に小さい値の個数は last_dist
         #   3. path[h] には高さhにおける、val[last_nxt_i]を超えない最大値の情報が入る
         self._len = self._logN = self._kind_value = 0
-        self._next_increase_logN_size = self.logN_GROWTH_FACTOR = 2  #再代入
+        self._next_increase_logN_size = SortedList.logN_GROWTH_FACTOR
         self._val: list[T] = []
         self._skipid: list[int] = [0]
         self._skip: list[int] = [0]
@@ -118,7 +118,7 @@ class SortedList[T]:
         return self
     def _all_list_clear(self) -> None:
         self._len = self._logN = self._kind_value = 0
-        self._next_increase_logN_size = self.logN_GROWTH_FACTOR
+        self._next_increase_logN_size = SortedList.logN_GROWTH_FACTOR
         self._val.clear()
         self._skipid.clear(); self._skipid.append(0)
         self._skip.clear(); self._skip.append(0)
@@ -231,7 +231,7 @@ class SortedList[T]:
                 self._skip.append(self._skip[k])
                 self._skip[k] = -1
         #2. logN += 1
-        self._next_increase_logN_size *= self.logN_GROWTH_FACTOR
+        self._next_increase_logN_size *= SortedList.logN_GROWTH_FACTOR
         self._logN += 1
         self._freeid.append(0)
         self._path.append(0)
