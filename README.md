@@ -10,7 +10,7 @@ API設計は[AtCoder Library(ACL)](https://github.com/atcoder/ac-library)風に�
 
 ## 使用方法  
 
-必要なファイルをコピーして仕様してください。  
+必要なファイルをコピー・ペーストして使用してください。  
 各ライブラリの使い方は順次追加予定です。  
 
 
