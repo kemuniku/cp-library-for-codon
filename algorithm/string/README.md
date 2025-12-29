@@ -1,4 +1,4 @@
-# 文字列
+# string
 
 文字列アルゴリズム全般のライブラリです。   
 ACLとは異なり、suffix array, LCP arrayとZ algorithmが別ライブラリに分けられています。
