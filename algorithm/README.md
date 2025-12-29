@@ -2,7 +2,11 @@
 
 アルゴリズム・データ構造のライブラリです。  
 
-## データ構造
-- [DSU(Disjoint Set Union / UnionFind)](./dsu/)   
+## データ構造 
 
-(現在編集中)
+ライブラリのREADMEができたものから、ここにリンクを追加します。  
+
+- [DSU(Disjoint Set Union / UnionFind)](./dsu/)
+- [Fenwick Tree](./fenwick_tree/)
+
+
