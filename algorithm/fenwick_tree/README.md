@@ -6,7 +6,7 @@
 
 ## 使い方  
 
-`FenwickTree(N) -> None`
+`FenwickTree(N: int) -> None`
 - 長さNの配列Aを確保し、すべての要素を0で初期化します。
 
 `build(A: generator[T]) -> None`  
