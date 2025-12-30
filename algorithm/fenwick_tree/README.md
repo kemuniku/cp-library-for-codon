@@ -12,7 +12,8 @@
 `build(A: generator[T]) -> None`  
 `build(A: list[T]) -> None`  
 - Fenwick Treeの配列を引数Aで初期化します。
-- 制約: len(A) = N (assertは行いません)
+- 制約: len(A) = N  
+(len(A) < N でもこの関数は動作しますが、len(A)以降の参照と`bisect(value)`の結果が保証できなくなります)  
 - 計算量: 時間 O(N)
 
 `add(i: int, value: T) -> None`
@@ -21,7 +22,7 @@
 `sum0(i: int) -> T`  
 `sum(i: int) -> T`  
 `sum(Lt: int, Rt: int) -> T`  
-- 区間和を計算する関数です。**`sum`関数は1引数と2引数で機能が異なります。**  
+- 区間和を計算する関数です。**`sum`関数は1引数と2引数で機能が異なります**。  
 - `sum0(i)` と `sum(i)` は、**閉区間** A[0, i]の総和を返します(A[i]を含みます)。  
 i < 0 のときは0を返します。i ≥ N の場合はAssertionErrorとなります。    
 制約: i < N
