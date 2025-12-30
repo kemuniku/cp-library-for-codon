@@ -8,7 +8,7 @@ N頂点の無向グラフに対して、
 
 ## 使い方  
 
-`DSU(N) -> None`
+`DSU(N: int) -> None`
 - N頂点0辺の無向グラフで初期化します。
 
 `leader(Vi: int) -> int` 
