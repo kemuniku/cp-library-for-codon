@@ -9,4 +9,5 @@
 - [DSU(Disjoint Set Union / UnionFind)](./dsu/)
 - [Fenwick Tree](./fenwick_tree/)
 - [Segment Tree](./segment_tree/)
+- [Lazy Segment Tree](./lazy_segment_tree/)
 
