@@ -13,7 +13,7 @@
 - 第3引数がAの場合、長さlen(A)の配列を確保し、配列を引数Aで初期化します。
 - opは二項演算です。**型はFとしていますが、`Function`型にしてください**。  
   (型にジェネリクスを用いているのは、codonの関数型推論エラーを回避するためです)     
-`op(node_Lt: T, node_Rt: T) -> new_node: T` となるような関数を渡してください。
+`op(左子の作用値: T, 右子の作用値: T) -> 合成後の作用値: T` となるような関数を渡してください。
 
 `set(i: int, value: T) -> None`
 - A[i]の値をvalueに変更します。
@@ -23,7 +23,7 @@
 - 計算量: O(1)
 
 `prod(Lt: int, Rt: int) -> T`
-- **半開区間** A[Lt, Rt)の積を返します(A[Rt]を含みません)。
+- **半開区間** A[Lt, Rt)の積を返します(A[Rt]を含みません)。   
 Lt = Rt の場合、単位元eを返します。
 - 制約: 0 ≤ Lt ≤ Rt ≤ N
 
@@ -32,13 +32,13 @@ Lt = Rt の場合、単位元eを返します。
 - 計算量: O(1)  
 
 `max_right(Lt: int, judge: Function[tuple[T], bool]) -> int`
-- `judge(T) -> bool` の形の判定関数judgeを引数に取ります。    
+- `judge(作用値: T) -> bool` の形の判定関数judgeを引数に取ります。    
 ここで、judge(単位元e) = True および 区間積の単調性を要求します。   
 judge(prod(Lt, Rt)) = True を満たす最大のRt(Lt ≤ Rt ≤ N)を返します。
 - 制約: 0 ≤ Lt ≤ N
 
 `min_left(Rt: int, judge: Function[tuple[T], bool]) -> int`
-- `judge(T) -> bool` の形の判定関数judgeを引数に取ります。  
+- `judge(作用値: T) -> bool` の形の判定関数judgeを引数に取ります。  
 ここで、judge(単位元e) = True および 区間積の単調性を要求します。  
 judge(prod(Lt, Rt)) = True を満たす最小のLt(0 ≤ Lt ≤ Rt)を返します。
 - 制約: 0 ≤ Rt ≤ N
