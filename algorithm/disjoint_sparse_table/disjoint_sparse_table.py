@@ -1,27 +1,23 @@
-#disjoint Sparse Table for codon
-class disjointSparseTable[Te, Tf]:
+#Disjoint Sparse Table
+class DisjointSparseTable[T, F]:
     '''
-    disjoint Sparse Table for codon
-    Θ(NlogN)回の前計算の下、配列の区間積をO(1)回の演算で取得します。
+    Disjoint Sparse Table for codon
+    時間・空間Θ(NlogN)の前計算の下、O(1)回の演算で区間積を取得します。
 
+    op: 合成関数  op(node_Lt: T, node_Rt: T) -> node_new: T
     A: 読み込ませる配列
-    identity_e: 単位元 要素の型はAの要素と同じにしてください
-    node_f: 合成関数 f(node_Lt: Te, node_Rt: Te) -> node_new: Te
     '''
     N: int
-    _e: Te
-    _f: Tf
-    _node: list[Te]
-    __slots__ = ('N', '_e', '_f', '_node')
-    def __init__(self, A: list[Te], identity_e: Te, node_f: Tf) -> None:
+    _op: F
+    _node: list[T]
+    __slots__ = ('N', '_op', '_node')
+    def __init__(self, op: F, A: list[T]) -> None:
         self.N = N = len(A)
-        logN: int = max(1, len(bin(N - 1)) - 2)  #(N - 1).bit_length()
-        self._e, self._f = identity_e, node_f
-        self._node = node = [self._e for _ in range(N * logN)]
+        logN: int = len(bin(N - 1)) - 2 if N >= 2 else N  #(N - 1).bit_length()
+        self._op = op
+        self._node = node = A * logN
         for h in range(logN):
             offset: int = h * N
-            for i, Ai in enumerate(A, start = offset):
-                node[i] = Ai
             b = diff = 1 << h
             step: int = 2 << h
             while b < N:
@@ -29,7 +25,7 @@ class disjointSparseTable[Te, Tf]:
                 i: int = b + 1
                 Rt: int = min(b + diff, N)
                 while i < Rt:
-                    node[i + offset] = back = self._f(back, A[i])
+                    node[i + offset] = back = self._op(back, A[i])
                     i += 1
                 b += step
             b: int = diff - 1
@@ -38,16 +34,14 @@ class disjointSparseTable[Te, Tf]:
                 i: int = b - 1
                 Lt: int = b - diff
                 while Lt < i:
-                    node[i + offset] = back = self._f(A[i], back)
+                    node[i + offset] = back = self._op(A[i], back)
                     i -= 1
                 b += step
-    def fold(self, Lt: int, Rt: int) -> Te:
-        '半開区間積A[Lt, Rt)を取得します。Lt == Rtの場合、単位元eを返します。'
-        assert 0 <= Lt <= Rt <= self.N
-        if Lt == Rt:
-            return self._e
+    def fold(self, Lt: int, Rt: int) -> T:
+        '半開区間積A[Lt, Rt)を取得します。制約で 0 <= Lt < Rt <= Nを要求します。'
+        assert 0 <= Lt < Rt <= self.N
         Rt -= 1
         if Lt == Rt:
             return self._node[Lt]
         h: int = 63 - (Lt ^ Rt).__ctlz__()  #h ← (Lt ^ Rt).bit_length() - 1
-        return self._f( self._node[h * self.N + Lt], self._node[h * self.N + Rt] )
+        return self._op( self._node[h * self.N + Lt], self._node[h * self.N + Rt] )
