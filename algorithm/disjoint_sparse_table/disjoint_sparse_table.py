@@ -37,7 +37,7 @@ class DisjointSparseTable[T, F]:
                     node[i + offset] = back = self._op(A[i], back)
                     i -= 1
                 b += step
-    def fold(self, Lt: int, Rt: int) -> T:
+    def prod(self, Lt: int, Rt: int) -> T:
         '半開区間積A[Lt, Rt)を取得します。制約で 0 <= Lt < Rt <= Nを要求します。'
         assert 0 <= Lt < Rt <= self.N
         Rt -= 1
