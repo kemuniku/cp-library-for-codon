@@ -18,4 +18,5 @@
 - [math](./math/)
 - [高速素因数分解](./prime_fact/)
 - [convolution (NTT)](./convolution/)
+- [modint](./modint/)
 - [string](./string/)
