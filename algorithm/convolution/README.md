@@ -29,7 +29,7 @@
 (実装上、`bit_length`の計算量がO(log wordsize) = O(log 64)です)
 
 `find_primitive_root(P: int) -> int`
-- 素数Pの原始根のひとつを返します。なお、有名素数は原始根を埋め込んであります。
+- 素数Pの原始根のひとつを返します。
 - 制約: 2 ≤ P, Pは素数
 - 計算量: O(√P + log^2 P)
 
