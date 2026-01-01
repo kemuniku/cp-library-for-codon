@@ -54,12 +54,12 @@ len(R) = len(M) = 0 の場合、(0, 1)を返します。
 ## [floor sum](./floor_sum.py)
 
 sum( floor( (ai + b) / m ) for i in range(n) ) を求めます。  
-**オーバーフロー時にバグが発生するので、入力と制約を制限しています。今後修正予定です。**
+**オーバーフロー時にバグが発生するので、入力と制約を制限しています。**
 
 ### 使い方
 
 `floor_sum(n: T, m: T, a: T, b: T) -> T`
-- sum( floor( (ai + b) / m ) for i in range(n) ) を求めます。  
+- sum( floor( (ai + b) / m ) for i in range(n) ) を求めます(nは区間に含みません)。  
 **n ≤ 0 の場合、0を返します**。
 - 制約
     - 0 < m
