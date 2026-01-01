@@ -14,3 +14,4 @@
 - [SCC](./scc/)
 - [最大流](./maxflow/)
 - [二部グラフマッチング](./bipartite_matching/)
+- [最小費用流](./mincostflow/)
