@@ -6,9 +6,10 @@
 
 ライブラリのREADMEができたものから、ここにリンクを追加します。  
 
-- [DSU(Disjoint Set Union / UnionFind)](./dsu/)
+- [Disjoint Set Union (UnionFind)](./dsu/)
 - [Fenwick Tree](./fenwick_tree/)
 - [Segment Tree](./segment_tree/)
 - [Lazy Segment Tree](./lazy_segment_tree/)
 - [Disjoint Sparse Table](./disjoint_sparse_table/)
 - [SCC](./scc/)
+- [最大流](./maxflow/)
