@@ -17,3 +17,4 @@
 - [最小費用流](./mincostflow/)
 - [string](./string/)
 - [convolution (NTT)](./convolution/)
+- [math](./math/)
