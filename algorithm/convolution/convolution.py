@@ -38,26 +38,6 @@ class convolution:
             self._rate3[i] = ( self._root[i + 3] * r3 ) % P
             self._irate3[i] = ( self._iroot[i + 3] * i3 ) % P
             r3, i3 = ( r3 * self._iroot[i + 3] ) % P, ( i3 * self._root[i + 3] ) % P
-    def __init__(self, P: int, primitive_root: int = 0) -> None:
-        assert 2 <= P <= 2147_483_648, f'2 <= P <= 2147_483_648 から外れています。{P = }'
-        if not 1 <= primitive_root < P:
-            primitive_root: int = self.find_primitive_root(P)
-        self.P: int = P
-        Q: int = P - 1
-        self._rank2: int = len(bin(Q & - Q)) - 3  #(Q & - Q).bit_length() - 1
-        self._root = [pow(primitive_root, Q >> e, P) for e in range(self._rank2 + 1)]
-        self._iroot = [pow(Ri, P - 2, P) for Ri in self._root]  #pow(Ri, -1, P)
-        self._rate2, self._irate2 = [0] * (self._rank2    ), [0] * (self._rank2    )
-        self._rate3, self._irate3 = [0] * (self._rank2 - 1), [0] * (self._rank2 - 1)
-        r2 = i2 = r3 = i3 = 1
-        for i in range( self._rank2 - 1 ):
-            self._rate2[i] = ( self._root[i + 2] * r2 ) % P
-            self._irate2[i] = ( self._iroot[i + 2] * i2 ) % P
-            r2, i2 = ( r2 * self._iroot[i + 2] ) % P, ( i2 * self._root[i + 2] ) % P
-        for i in range( self._rank2 - 2 ):
-            self._rate3[i] = ( self._root[i + 3] * r3 ) % P
-            self._irate3[i] = ( self._iroot[i + 3] * i3 ) % P
-            r3, i3 = ( r3 * self._iroot[i + 3] ) % P, ( i3 * self._root[i + 3] ) % P
     #内部関数
     def _factorize(self, N: int) -> list[int]:  #O(√N) 素因数のみ
         n: int = N
