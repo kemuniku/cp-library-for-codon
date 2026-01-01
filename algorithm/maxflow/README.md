@@ -44,7 +44,7 @@ N頂点M辺の最大流を、Dinic法でO(N^2 M)で求めます。
 - 計算量: O(N^2 M)
 
 `flow_capacity_scaling(St: int, Gl: int, flow_limit: T) -> T`
-- **辺容量の型Tが整数型のときに限り**、Dinic法の計算量がO(NMlogC)に落ちます。
+- **辺容量の型Tが整数型の場合に限りますが**、容量スケーリングに対応しています。
 - 頂点Stから頂点Glに、flow_limitを流量上限としてフローを流し、流せた量を返します。
 - 制約: 0 ≤ St,Gl < N, St ≠ Gl, 答えは型Tの表現範囲に収まる, 0 ≤ flow_limit, Tは(`int`, `Int[N]`, `UInt[N]`)のどれか
 - 計算量: 辺の最大容量をCとして、O(NMlogC)
@@ -54,5 +54,4 @@ N頂点M辺の最大流を、Dinic法でO(N^2 M)で求めます。
 - 残余グラフ上で、頂点Stから各頂点に到達可能か判定します。
 - `min_cut(St, permissible_error)`では、残容量がpermissible_error以下の辺を残容量0とみなして判定します。  
 追加制約: 0 ≤ permissible_error
-- 制約: 0 <= St < N
 - 計算量: O(N + M)
