@@ -11,3 +11,4 @@
 - [Segment Tree](./segment_tree/)
 - [Lazy Segment Tree](./lazy_segment_tree/)
 - [Disjoint Sparse Table](./disjoint_sparse_table/)
+- [SCC](./scc/)
