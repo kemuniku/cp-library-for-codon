@@ -36,17 +36,17 @@ N頂点M辺の最大流を、Dinic法でO(N^2 M)で求めます。
 `flow(St: int, Gl: int, flow_limit: T, permissible_error: T) -> T`
 - 頂点Stから頂点Glにフローを流し、流した量を返します。
 - `flow(St, Gl)`では、頂点Stから頂点Glにフローを**流せるだけ**流します。
-- `flow(St, Gl, flow_limit)`では、**flow_limitを流量上限として**流します。    
+- `flow(St, Gl, flow_limit)`では、フローを**flow_limitを流量上限として**流します。    
 追加制約: 0 ≤ flow_limit
 - `flow(St, Gl, flow_limit, permissible_error)`では、**残容量がpermissible_error以下の辺を残容量0とみなし**、flow_limitを流量上限としてフローを流します。    
 追加制約: 0 ≤ flow_limit, 0 ≤ permissible_error
-- 制約: 0 ≤ St < N, 0 ≤ Gl < N, St ≠ Gl, 答えは型Tの表現範囲に収まる
+- 制約: 0 ≤ St,Gl < N, St ≠ Gl, 答えは型Tの表現範囲に収まる
 - 計算量: O(N^2 M)
 
 `flow_capacity_scaling(St: int, Gl: int, flow_limit: T) -> T`
 - **辺容量の型Tが整数型のときに限り**、Dinic法の計算量がO(NMlogC)に落ちます。
 - 頂点Stから頂点Glに、flow_limitを流量上限としてフローを流し、流せた量を返します。
-- 制約: 0 ≤ St < N, 0 ≤ Gl < N, St ≠ Gl, 答えは型Tの表現範囲に収まる, 0 ≤ flow_limit, Tは`int`, `Int[N]`, `UInt[N]`のどれか
+- 制約: 0 ≤ St,Gl < N, St ≠ Gl, 答えは型Tの表現範囲に収まる, 0 ≤ flow_limit, Tは(`int`, `Int[N]`, `UInt[N]`)のどれか
 - 計算量: 辺の最大容量をCとして、O(NMlogC)
 
 `min_cut(St: int) -> list[bool]`  
