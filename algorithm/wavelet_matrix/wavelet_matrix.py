@@ -112,7 +112,7 @@ class WaveletMatrix:
     def select(self, cnt: int, value: int) -> int:
         '''
         0-indexedでcnt個目のvalueの添字をO(logM)で取得します。
-        特に、cnt = 0 かつ value in A の時は A[Lt: Rt].index(value) と返り値が一致します。
+        特に、cnt = 0 かつ value in A の時は A.index(value) と返り値が一致します。
         cnt >= A.count(value) の場合、Nを返します。
         '''
         if value < 0 or value >> self._logM >= 1:
