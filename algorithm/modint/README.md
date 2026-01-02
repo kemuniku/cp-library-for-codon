@@ -24,7 +24,8 @@ class modint(Static[_ModIntCore]):
 
 `modint(n: int) -> None`
 - 法modの下で、整数nをmodintにキャストします。
-- **nは`int`型しか受け付けません。`Int[N]`や`UInt[N]`といった型をmodintに直接キャストすることはできません。**
+- 2026/01/01現在、**nは`int`型しか受け付けません。**  
+`Int[N]`や`UInt[N]`といった型を直接modintにキャストすることはできません。
 - 制約: **nは`int`型**
 
 ```python
@@ -61,7 +62,7 @@ modint /= other
 - 制約
    - otherの型は(`int`, `Int`, `UInt`, **自身と同じクラスの`modint`**)のどれか
    - $-2^{63}$ ≤ other < $2^{63}$ (otherは **`int`の表現範囲内**)
-   - `/`演算では、割られる数は法modにおいて逆元を有する
+   - `/`演算では、割る数は法modにおいて逆元を有する
 - 計算量: `+` `-` `*`はO(1)、`/`はO(log mod)
 
 ```python
@@ -76,7 +77,8 @@ modint >> other
 - `inv(modint)`は法modにおける逆元を返します。定義できない場合はエラーとなります。
 - `<<`は`2 ** other`倍し、`>>`は`2 ** other`で割ります。  
 ここで、`>>`は奇数modであることを要求します。偶数modの場合はエラーとなります。
-- `modint / 2`の計算量はO(log mod)ですが、`modint >> 1`はO(1)です。
+- `>>`は2で割る操作を最適化しています。  
+`modint / 2`の計算量はO(log mod)ですが、`modint >> 1`はO(1)です。
 - 制約
    - otherの型は(`int`, `Int`, `UInt`, **自身と同じクラスの`modint`**)のどれか
    - $-2^{63}$ ≤ other < $2^{63}$ (otherは **`int`の表現範囲内**)
