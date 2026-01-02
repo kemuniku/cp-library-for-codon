@@ -71,7 +71,6 @@ SortedSet.clear()
 - x > value (**valueより真に大きい**) を満たす最小の要素xを返します。    
 `allow_equal`をTrueにすると、xの条件を x ≥ value (**value以上**) とします。
 - 条件を満たす値xが存在しない場合はNoneを返します。
-- 返り値は`Optional`型(型`T` または `None`を取る型)です。 
 - 期待計算量: O(logN)
 
 
@@ -108,7 +107,7 @@ SkipListを用いた順序付き多重集合です。
 ### 使い方
 
 `SortedList() -> None`    
-`SortedList(A: generator[T]) -> None`
+`SortedList(A: generator[T]) -> None`    
 `SortedList(A: list[T]) -> None`
 - SortedListを宣言します。
 - 引数が`generator`あるいは`list`の場合、すべての要素をSortedListに追加します。  
