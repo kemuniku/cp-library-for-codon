@@ -2,9 +2,9 @@
 
 アルゴリズム・データ構造のライブラリです。  
 
-## データ構造 
+## 一覧
 
-ライブラリのREADMEができたものから、ここにリンクを追加します。  
+READMEを書いたものから追加します。
 
 - [Disjoint Set Union (UnionFind)](./dsu/)
 - [Fenwick Tree](./fenwick_tree/)
@@ -12,6 +12,7 @@
 - [Lazy Segment Tree](./lazy_segment_tree/)
 - [Disjoint Sparse Table](./disjoint_sparse_table/)
 - [SortedSet / SortedList](./sortedlist/)
+- [Wavelet Matrix](./wavelet_matrix/)
 - [SCC](./scc/)
 - [最大流](./maxflow/)
 - [二部グラフマッチング](./bipartite_matching/)
