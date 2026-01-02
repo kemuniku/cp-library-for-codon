@@ -101,7 +101,7 @@ SortedSet.clear()
 ## [SortedList](./sortedlist.py)
 
 SkipListを用いた順序付き多重集合です。    
-**要素の重複を認めますが、集合の大きさは $10^9$ 以下としてください。**
+**要素の重複を認めますが、集合の大きさは $10^9$ 以下としてください。**    
 以下、Nを集合の大きさとします。
 - 制約: N ≤ $10^9$
 
@@ -147,7 +147,7 @@ next_value(value: T, allow_equal: bool = False) -> Optional[T]
 - 期待計算量: O(logN)
 
 `discard(value: T, amount: int = 1) -> None`
-- 集合から値valueをamount個削除します。  
+- 集合から値valueを max(0, amount) 個削除します。  
 集合内の値valueの個数がamount個未満の場合、値valueをすべて削除します。
 - 期待計算量: O(logN)
 
