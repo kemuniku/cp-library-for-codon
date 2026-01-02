@@ -247,7 +247,7 @@ class WaveletMatrix:
         '''
         A[Lt, Rt)の頻度を数え、E: [(値, 個数) のリスト]を作成します。
         その後 個数の降順・同率なら値の昇順 にEをソートし、E[:k]を返します。
-        計算量は O( cnt * logNlogM ) です。返り値のタプルの順序は(値, 個数)です。
+        計算量は O( k * logNlogM ) です。返り値のタプルの順序は(値, 個数)です。
         '''
         assert 0 <= Lt <= Rt <= self._N
         ans: list[tuple[int, int]] = []
@@ -273,7 +273,7 @@ class WaveletMatrix:
     def intersect(self, L1: int, R1: int, L2: int, R2: int) -> list[tuple[int, int]]:
         '''
         A[L1, R1) と A[L2, R2) の共通要素を取り出し、(値, 個数) の昇順で返します。
-        計算量は O( (R - L)logM )です。
+        計算量は O( (R - L) logM )です。
         '''
         assert 0 <= L1 <= R1 <= self._N and 0 <= L2 <= R2 <= self._N
         ans: list[tuple[int, int]] = []
