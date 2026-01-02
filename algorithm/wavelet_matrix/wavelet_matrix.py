@@ -246,7 +246,7 @@ class WaveletMatrix:
     def topk_mode(self, Lt: int, Rt: int, k: int) -> list[tuple[int, int]]:
         '''
         A[Lt, Rt)の頻度を数え、E: [(値, 個数) のリスト]を作成します。
-        その後 個数の降順・同率なら値の昇順 にEをソートし、E[:cnt]を返します。
+        その後 個数の降順・同率なら値の昇順 にEをソートし、E[:k]を返します。
         計算量は O( cnt * logNlogM ) です。返り値のタプルの順序は(値, 個数)です。
         '''
         assert 0 <= Lt <= Rt <= self._N
