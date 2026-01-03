@@ -13,7 +13,7 @@ class Li_Chao_Tree:
     _C: list[int]
     _X: list[int]
     __slots__ = ('inf', '_L', '_C', '_X')
-    def __init__(self, min_x: int, max_x: int) -> int:
+    def __init__(self, min_x: int, max_x: int) -> None:
         assert min_x <= max_x, f'xの大小が逆転しています。{min_x = }, {max_x = }'
         self.inf = ~(-1 << 63)
         self._L = [self.inf, self.inf]  #ノードiの線分(a, b) 線分不在ならinf
