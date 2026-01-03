@@ -8,7 +8,7 @@ N = len(A), M = max(A)として、構築O(NlogM)・検索操作の多くをO(log
 
 
 
-`WaveletMatrix(A: list[int])`
+`WaveletMatrix(A: list[int]) -> None`
 - Wavelet Matrixに非負整数列Aを読み込みます。
 - 制約: len(A) < $2^{29}$, **Aはint型の非負整数列**
 - 計算量: 時間 O(NlogM)、空間 O(N)
