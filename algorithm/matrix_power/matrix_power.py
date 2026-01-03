@@ -12,6 +12,7 @@ class matrix_power:
     _acc_limit: int
     __slots__ = ('MOD', '_acc_limit')
     def __init__(self, MOD: int) -> None:
+        assert 1 ≤ MOD
         self.MOD = MOD
         if MOD > 3037000500:  #3_037_ + 3_037 ** 2 >= 2 ** 63
             self._acc_limit: int = 1
@@ -74,8 +75,9 @@ class matrix_power:
     def eye(self, N: int) -> list[list[int]]:
         'N行N列の単位行列を返します。'
         A: list[list[int]] = [[0] * N for _ in range(N)]
-        for i in range(N):
-            A[i][i] = 1
+        if self.MOD > 1:
+            for i in range(N):
+                A[i][i] = 1
         return A
     def add(self, A: list[list[int]], B: list[list[int]]) -> list[list[int]]:
         '行列C := A + B を新しく生成します。'
