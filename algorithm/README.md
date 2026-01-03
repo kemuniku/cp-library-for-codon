@@ -11,6 +11,7 @@
 - [Disjoint Sparse Table](./disjoint_sparse_table/)
 - [SortedSet / SortedList](./sortedlist/)
 - [Wavelet Matrix](./wavelet_matrix/)
+- [Li Chao Tree](./li_chao_tree/)
 - [SCC](./scc/)
 - [最大流](./maxflow/)
 - [二部グラフマッチング](./bipartite_matching/)
@@ -27,7 +28,7 @@
 現バージョンでも使えますが、今後大規模に改修する予定です。  
 
 
-- [Li Chao Tree](./li_chao_tree/)
+
 
 (README 未完成)
 
