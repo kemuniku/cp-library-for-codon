@@ -20,8 +20,6 @@
 - [高速素因数分解](./prime_fact/)
 - [convolution (NTT)](./convolution/)
 - [modint](./modint/)
-
-(README 未完成)
 - [行列累乗](./matrix_power/)
 
 ## 調整中
