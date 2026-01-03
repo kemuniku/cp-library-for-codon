@@ -4,8 +4,6 @@
 
 ## 一覧
 
-READMEを書いたものから追加します。
-
 - [Disjoint Set Union (UnionFind)](./dsu/)
 - [Fenwick Tree](./fenwick_tree/)
 - [Segment Tree](./segment_tree/)
@@ -23,3 +21,17 @@ READMEを書いたものから追加します。
 - [convolution (NTT)](./convolution/)
 - [modint](./modint/)
 
+(README 未完成)
+- [行列累乗](./matrix_power/)
+
+## 調整中
+
+現バージョンでも使えますが、今後大規模に改修する予定です。  
+
+
+- [Li Chao Tree](./li_chao_tree/)
+
+(README 未完成)
+
+- [HL分解](./hld/)
+- [LowLink](./lowlink/)
