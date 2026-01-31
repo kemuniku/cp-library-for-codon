@@ -49,6 +49,8 @@ class SegTree[T, F]:
         Lt == Rt の場合、単位元eを返します。
         '''
         assert 0 <= Lt <= Rt <= self._N
+        if Lt == Rt:
+            return self._e
         Lt, Rt = Lt | self._size, Rt + self._size
         vL, vR = self._e, self._e
         while Lt < Rt:
